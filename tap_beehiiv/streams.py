@@ -83,7 +83,7 @@ class CursorPaginatedMixin:
         next_page_token: Any | None,  # noqa: ANN401
     ) -> dict[str, Any]:
         """Send the page token as `cursor` instead of `page`."""
-        params: dict[str, Any] = super().get_url_params(context, None)  # type: ignore[misc]
+        params: dict[str, Any] = super().get_url_params(context, None)  # type: ignore[misc]  # ty: ignore[missing-attribute]
         if next_page_token is not None:
             params["cursor"] = next_page_token
         return params

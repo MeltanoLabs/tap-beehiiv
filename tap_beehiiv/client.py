@@ -62,7 +62,7 @@ class BeehiivStream(RESTStream[Any]):
 
     url_base = "https://api.beehiiv.com/v2"
     records_jsonpath = "$.data[*]"
-    schema: ClassVar[StreamSchema] = StreamSchema(SCHEMAS_DIR)
+    schema = StreamSchema(SCHEMAS_DIR)
 
     #: Query parameters sent with every request for this stream.
     extra_params: ClassVar[dict[str, Any]] = {}
