@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "updated": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  }
+}

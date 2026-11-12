@@ -1,0 +1,83 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "poll_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "poll_choices": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "trivia_answer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stats": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "total_responses": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "poll_responses": {
+      "type": [
+        "array",
+        "null"
+      ]
+    }
+  }
+}

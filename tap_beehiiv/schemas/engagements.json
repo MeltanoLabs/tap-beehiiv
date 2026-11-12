@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "total_opens": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "unique_opens": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "total_clicks": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "total_verified_clicks": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "unique_clicks": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "unique_verified_clicks": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  }
+}

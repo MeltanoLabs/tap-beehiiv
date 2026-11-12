@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "slug": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "auto_subscribe": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "show_in_preference_center": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "subscriber_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "from_address": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reply_to_address": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sender_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "headers": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "utm_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_medium": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_campaign": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_params_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "tier_ids": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  }
+}

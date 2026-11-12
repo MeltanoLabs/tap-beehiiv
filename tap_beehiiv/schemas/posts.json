@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "subtitle": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authors": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "created": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publish_date": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "displayed_date": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "split_tested": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "subject_line": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "preview_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "slug": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "thumbnail_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "web_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "preview_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audience": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "platform": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content_tags": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "meta_default_description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "meta_default_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "newsletter_list_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hidden_from_feed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "enforce_gated_content": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "email_capture_popup": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "recipients": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "recipient_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "headers": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "header_custom_css": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "from_address": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reply_to_address": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sender_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_medium": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_campaign": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "utm_params_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "content": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "stats": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "excluded_post_ids": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "send_targets": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "web_targets": {
+      "type": [
+        "array",
+        "null"
+      ]
+    }
+  }
+}

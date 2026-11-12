@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "organization_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "referral_program_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "created": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "stats": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "auto_fulfill": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "num_referrals": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "reward": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

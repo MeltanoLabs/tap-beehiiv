@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "post_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ad_link_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ad_link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "opens": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "payable_clicks": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "revenue": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_programmatic": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+send_anonymous_usage_stats: true
+project_id: "tap-beehiiv"
+default_environment: test
+requires_meltano: ">=4.0"
+environments:
+- name: test
+plugins:
+  extractors:
+  - name: "tap-beehiiv"
+    namespace: "tap_beehiiv"
+    pip_url: -e .
+    capabilities:
+    - catalog
+    - state
+    - discover
+    - about
+    - activate-version
+    - stream-maps
+    - schema-flattening
+    - batch
+    - structured-logging
+
+    settings:
+    - name: api_key
+      kind: password
+      label: API Key
+      description: beehiiv API key, sent as a Bearer token
+      sensitive: true
+
+    - name: publication_ids
+      kind: array
+      label: Publication IDs
+      description: >-
+        Publication IDs to sync. Defaults to every publication the API key can access.
+
+    - name: start_date
+      kind: date_iso8601
+      label: Start Date
+      description: >-
+        The earliest date to sync for date-filtered streams: `ad_network_reports` (by send
+        date, defaults to all time) and `engagements` (defaults to 30 days ago)
+
+    - name: posts_expand
+      kind: array
+      label: Posts Expand
+      description: >-
+        Objects to expand on `posts`, e.g. `stats`, `free_web_content`,
+        `premium_email_content`. Expanding content makes the sync considerably slower.
+      value: [stats]
+
+    - name: subscriptions_expand
+      kind: array
+      label: Subscriptions Expand
+      description: >-
+        Objects to expand on `subscriptions`, e.g. `stats`, `custom_fields`, `referrals`,
+        `newsletter_lists`
+      value: [stats]
+
+    - name: emit_activate_version_messages
+      kind: boolean
+      label: Emit Activate Version Messages
+      description: >-
+        Whether to emit `ACTIVATE_VERSION` messages for full-table streams, so that targets
+        which support them remove records that no longer exist in beehiiv
+      value: false
+
+    settings_group_validation:
+    - [api_key]
+
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
+    config:
+      destination_path: output

@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "publication_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "bio": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "bio_image_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "social_media_links": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}
