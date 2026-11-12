@@ -1,6 +1,13 @@
+[build-system]
+requires = [
+    "hatchling>=1,<2",
+    "hatch-vcs>=0.5",
+]
+build-backend = "hatchling.build"
+
 [project]
 name = "tap-beehiiv"
-version = "0.0.1"
+dynamic = ["version"]
 description = "Singer tap for beehiiv, built with the Meltano Singer SDK."
 readme = "README.md"
 authors = [
@@ -15,13 +22,13 @@ keywords = [
 ]
 classifiers = [
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
 ]
 license = "Apache-2.0"
 license-files = [ "LICENSE" ]
@@ -29,7 +36,6 @@ requires-python = ">=3.10"
 dependencies = [
     "singer-sdk~=0.54.9",
     "requests~=2.34.2",
-    "typing-extensions>=4.5.0; python_version < '3.13'",
 ]
 
 [project.scripts]
@@ -42,32 +48,55 @@ dev = [
 ]
 test = [
     "pytest>=9.0.3",
-    "pytest-github-actions-annotate-failures>=0.3",
+    "pytest-github-actions-annotate-failures>=0.4",
     "responses>=0.25.8",
     "singer-sdk[testing]",
 ]
 typing = [
-    "mypy>=1.19.1",
+    "mypy>=2.1",
+    "ty>=0.0.41",
     "types-requests",
 ]
 
-[tool.hatch.build.targets.wheel]
-packages = [
-    "tap_beehiiv",
-]
-
-[tool.pytest]
-minversion = "9.0"
-addopts = [
-    "--durations=10",
-]
+[tool.hatch.version]
+fallback-version = "0.1.0.dev0"
+source = "vcs"
 
 [tool.mypy]
+enable_error_code = [
+    "ignore-without-code",
+    "redundant-expr",
+    "truthy-bool",
+]
+warn_redundant_casts = true
+warn_unreachable = true
 warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.ty.rules]
+missing-override-decorator = "error"
+unused-type-ignore-comment = "ignore"
+
+[tool.pytest]
+addopts = [
+    "-ra",
+]
+filterwarnings = [
+    "error",
+    "once:No records were available to test:UserWarning",
+    "once:Fields in transformed catalog but not in records:UserWarning",
+    "once:Python 3.* its end of life:FutureWarning",
+]
+log_level = "INFO"
+minversion = "9"
+strict = true
+testpaths = [
+    "tests",
+]
 
 [tool.ruff]
 line-length = 100
-required-version = ">=0.14"
+required-version = ">=0.16.0"
 
 [tool.ruff.lint]
 future-annotations = true
@@ -81,37 +110,29 @@ select = ["ALL"]
 allow-star-arg-any = true
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = [
-    "S101",    # assert
+"tests/**/*.py" = [
+    "S101",  # assert
 ]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[build-system]
-requires = [
-    "hatchling>=1,<2",
-]
-build-backend = "hatchling.build"
-
+# This configuration can be used to customize tox environments
 [tool.tox]
-min_version = "4.22"
 requires = [
-    "tox>=4.22",
-    "tox-uv",
+    "tox>=4.53",
+    "tox-uv>=1.35",
 ]
 env_list = [
     "typing",
-    "py314",
-    "py313",
-    "py312",
-    "py311",
-    "py310",
+    { prefix = "3.", start = 10 },
 ]
 
 [tool.tox.env_run_base]
+description = "run tests on Python {env_name}"
 runner = "uv-venv-lock-runner"
 pass_env = [
+    "CI",
     "GITHUB_*",
     "TAP_BEEHIIV_*",
 ]
@@ -119,7 +140,9 @@ dependency_groups = [ "test" ]
 commands = [ [ "pytest", { replace = "posargs", default = [ "tests" ], extend = true } ] ]
 
 [tool.tox.env.typing]
+description = "type checks"
 dependency_groups = [ "test", "typing" ]
 commands = [
     [ "mypy", { replace = "posargs", default = [ "tap_beehiiv", "tests" ], extend = true } ],
+    [ "ty", "check", { replace = "posargs", default = [ "tap_beehiiv", "tests" ], extend = true } ],
 ]
